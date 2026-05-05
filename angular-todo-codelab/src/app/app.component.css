@@ -1,0 +1,135 @@
+:host {
+  display: block;
+  min-height: 100vh;
+  background: linear-gradient(160deg, #0f172a, #1e293b);
+  color: #e2e8f0;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+.todo-page {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 1.5rem;
+  box-sizing: border-box;
+}
+
+.todo-card {
+  width: min(680px, 100%);
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px solid rgba(148, 163, 184, 0.3);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 20px 45px rgba(15, 23, 42, 0.45);
+}
+
+h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.subtitle {
+  margin-top: 0.5rem;
+  color: #94a3b8;
+}
+
+.todo-form {
+  margin-top: 1.2rem;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.6rem;
+}
+
+input[type="text"] {
+  border: 1px solid #475569;
+  background: #0b1220;
+  color: #f8fafc;
+  border-radius: 0.6rem;
+  padding: 0.72rem 0.85rem;
+  font-size: 1rem;
+}
+
+button {
+  border: none;
+  border-radius: 0.6rem;
+  padding: 0.65rem 0.85rem;
+  cursor: pointer;
+  color: #e2e8f0;
+  background: #334155;
+}
+
+.todo-form button {
+  background: #2563eb;
+}
+
+.toolbar {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.toolbar p {
+  margin: 0;
+  color: #94a3b8;
+}
+
+.filters {
+  display: flex;
+  gap: 0.45rem;
+}
+
+.filters button.active {
+  background: #1d4ed8;
+}
+
+.todo-list {
+  list-style: none;
+  margin: 1rem 0 0;
+  padding: 0;
+  display: grid;
+  gap: 0.55rem;
+}
+
+.todo-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+  background: #111827;
+  border: 1px solid #334155;
+  border-radius: 0.65rem;
+  padding: 0.72rem 0.8rem;
+}
+
+.todo-list label {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  min-width: 0;
+}
+
+.todo-list span {
+  word-break: break-word;
+}
+
+.todo-list li.done span {
+  text-decoration: line-through;
+  color: #94a3b8;
+}
+
+.delete {
+  background: #991b1b;
+}
+
+.clear-completed {
+  margin-top: 1rem;
+  background: #7c2d12;
+}
+
+.empty-state {
+  margin-top: 1rem;
+  color: #94a3b8;
+}

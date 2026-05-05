@@ -1,0 +1,72 @@
+<main class="todo-page">
+  <section class="todo-card">
+    <h1>{{ title }}</h1>
+    <p class="subtitle">Build healthy habits one task at a time.</p>
+
+    <form class="todo-form" (ngSubmit)="addTodo()">
+      <input
+        type="text"
+        name="newTodoText"
+        [(ngModel)]="newTodoText"
+        placeholder="What do you need to do?"
+        autocomplete="off"
+      />
+      <button type="submit">Add</button>
+    </form>
+
+    <div class="toolbar">
+      <p>{{ remainingCount() }} left · {{ completedCount() }} completed</p>
+      <div class="filters">
+        <button
+          type="button"
+          [class.active]="filter() === 'all'"
+          (click)="setFilter('all')"
+        >
+          All
+        </button>
+        <button
+          type="button"
+          [class.active]="filter() === 'active'"
+          (click)="setFilter('active')"
+        >
+          Active
+        </button>
+        <button
+          type="button"
+          [class.active]="filter() === 'completed'"
+          (click)="setFilter('completed')"
+        >
+          Completed
+        </button>
+      </div>
+    </div>
+
+    @if (filteredTodos().length === 0) {
+      <p class="empty-state">No todos match this filter yet.</p>
+    } @else {
+      <ul class="todo-list">
+        @for (todo of filteredTodos(); track todo.id) {
+          <li [class.done]="todo.done">
+            <label>
+              <input
+                type="checkbox"
+                [checked]="todo.done"
+                (change)="toggleTodo(todo.id)"
+              />
+              <span>{{ todo.text }}</span>
+            </label>
+            <button type="button" class="delete" (click)="deleteTodo(todo.id)">
+              Delete
+            </button>
+          </li>
+        }
+      </ul>
+    }
+
+    @if (hasCompleted()) {
+      <button type="button" class="clear-completed" (click)="clearCompleted()">
+        Clear completed
+      </button>
+    }
+  </section>
+</main>
