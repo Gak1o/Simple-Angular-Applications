@@ -24,6 +24,10 @@
               {
                 "glob": "**/*",
                 "input": "public"
+              },
+              {
+                "glob": "CODELAB.md",
+                "input": "."
               }
             ],
             "styles": [
