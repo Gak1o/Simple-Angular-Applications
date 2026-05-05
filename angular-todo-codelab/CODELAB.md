@@ -1,4 +1,6 @@
-# Angular Todo List Codelab (Very Instructive)
+# Angular Todo List Codelab 
+This is Episode one of Introduction to Angular Codelabs, we will cover all key topics in this series
+and by episode 10, you will have enough understanding of Angular to build Single page applications on your own.
 
 This codelab is written like a guided class:
 1) explain the idea first,
